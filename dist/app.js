@@ -20,4 +20,27 @@ class Vehicle {
         return `${this.make} ${this.model} ${this.year}`;
     }
 }
+class Car extends Vehicle {
+    constructor(make, model, year, door) {
+        super(make, model, year);
+        this.door = door;
+    }
+    getinfo() {
+        return `${super.getinfo()}${this.door}`;
+    }
+}
+class Motercyle extends Vehicle {
+    constructor(make, model, year, hasSidecar) {
+        super(make, model, year);
+        this.hasSidecar = hasSidecar;
+    }
+    getinfo() {
+        return `${super.getinfo()} ${this.hasSidecar}`;
+    }
+}
+const Mycar = new Car('Toyota', 'Corolla', 2024, 4);
+const Mymotercyle = new Motercyle('Honda', 'seventy', 2025, false);
+console.log(Mycar);
+console.log(Mymotercyle);
+console.log(Mycar.getinfo());
 //# sourceMappingURL=app.js.map

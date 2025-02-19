@@ -44,4 +44,39 @@ constructor (make : string ,model : string , year : number) {
 }
 
 
+class Car extends Vehicle {
+    
+door : number;
 
+constructor (make : string , model : string , year : number , door : number) {
+    super(make , model , year);
+    this.door = door;
+}
+
+    getinfo(): string {
+        return `${super.getinfo () }${this.door}`
+}}
+
+class Motercyle extends Vehicle {
+    hasSidecar : boolean;
+
+    constructor(make : string , model : string , year : number , hasSidecar : boolean ) {
+        super(make , model , year ) 
+        this.hasSidecar = hasSidecar;
+    }
+
+    getinfo(): string {
+        
+        return `${super.getinfo()} ${this.hasSidecar}`
+    }
+
+}
+
+const Mycar = new Car ('Toyota', 'Corolla' , 2024 , 4);
+
+const Mymotercyle = new Motercyle ('Honda', 'seventy', 2025 , false)
+
+console.log(Mycar)
+console.log(Mymotercyle)
+
+console.log(Mycar.getinfo());
