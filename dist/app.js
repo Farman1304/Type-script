@@ -43,4 +43,32 @@ const Mymotercyle = new Motercyle('Honda', 'seventy', 2025, false);
 console.log(Mycar);
 console.log(Mymotercyle);
 console.log(Mycar.getinfo());
+class BankAccount {
+    constructor(initianlBalance, accountNumber) {
+        this.balance = initianlBalance;
+        this.AccNumber = accountNumber;
+    }
+    getaccountNumber() {
+        return this.AccNumber;
+    }
+    getOpeningBalance() {
+        return this.balance;
+    }
+    deposit(amount) {
+        this.balance += amount;
+    }
+    getBalance() {
+        return this.balance;
+    }
+    withdraw(amount) {
+        this.balance -= amount;
+    }
+}
+const myAccount = new BankAccount(1000, '112233');
+console.log("Account number", myAccount.getaccountNumber());
+console.log("Openining Balance", myAccount.getOpeningBalance());
+myAccount.deposit(500);
+console.log("Current Balance", myAccount.getBalance());
+myAccount.withdraw(200);
+console.log("Net Total", myAccount.getBalance());
 //# sourceMappingURL=app.js.map

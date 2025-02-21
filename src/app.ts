@@ -80,3 +80,51 @@ console.log(Mycar)
 console.log(Mymotercyle)
 
 console.log(Mycar.getinfo());
+
+
+class BankAccount  {
+    private balance : number;
+    private readonly AccNumber : string;
+
+    constructor (initianlBalance : number , accountNumber : string ) {
+        this.balance = initianlBalance;
+        this.AccNumber = accountNumber;
+    }
+
+    getaccountNumber (): string {
+        return this.AccNumber
+    }
+
+    getOpeningBalance () : number {
+        return this.balance
+
+    }
+
+    deposit (amount : number) :void {
+               this.balance += amount;
+              }
+
+              getBalance () : number {
+                return this.balance
+              }
+
+              withdraw (amount : number) : void {
+                this.balance -= amount
+              }
+
+              }
+
+              const myAccount = new BankAccount (1000 , '112233') ;
+             
+              console.log( "Account number" , myAccount.getaccountNumber());
+
+              console.log( "Openining Balance" , myAccount.getOpeningBalance());
+
+              myAccount.deposit(500);
+              console.log( "Current Balance" , myAccount.getBalance());
+
+              myAccount.withdraw(200);
+
+              console.log( "Net Total" , myAccount.getBalance());
+
+
