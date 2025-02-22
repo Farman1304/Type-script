@@ -114,4 +114,24 @@ const employee1 = new Developer('Maaz', 10000, 'Java script');
 const employee2 = new Designer('Ali', 10000, 'Adobe');
 console.log(employee1.getDetails());
 console.log(employee2.getDetails());
+function useVehicle(Vehicle) {
+    if ('drive' in Vehicle) {
+        console.log(Vehicle.drive());
+    }
+    else {
+        console.log(Vehicle.ride());
+    }
+}
+const Cars = {
+    drive: function () {
+        return 'Driving a Car';
+    }
+};
+const myBikes = {
+    ride: function () {
+        return 'Riding a bike';
+    }
+};
+useVehicle(Cars);
+useVehicle(myBikes);
 //# sourceMappingURL=app.js.map

@@ -200,5 +200,39 @@ class Designer extends Employee {
 const employee1 = new Developer ('Maaz' , 10000 ,'Java script')
 const employee2 = new Designer ('Ali' , 10000 ,'Adobe')
 
-console.log(employee1.getDetails())
-console.log(employee2.getDetails())
+console.log(employee1.getDetails());
+console.log(employee2.getDetails());
+
+
+
+interface newCar {
+    drive () :string
+}
+
+interface newBike {
+    ride () : string
+}
+
+function useVehicle (Vehicle : newCar | newBike ) : void {
+    if('drive' in Vehicle ) {
+        console.log(Vehicle.drive())
+    } else {
+        console.log(Vehicle.ride())
+    }}
+
+    const Cars : newCar ={
+        drive : function () {
+            return  'Driving a Car';
+        }
+    };
+
+
+const myBikes : newBike = {
+    ride : function () {
+        return 'Riding a bike';
+    }
+}
+
+useVehicle(Cars);
+useVehicle(myBikes)
+
