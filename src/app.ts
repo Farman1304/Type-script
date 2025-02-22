@@ -128,3 +128,77 @@ class BankAccount  {
               console.log( "Net Total" , myAccount.getBalance());
 
 
+              
+
+
+interface Product {
+    id : number;
+    name : string;
+    price : number;
+    category : string; }
+
+
+function Createproduct (Product : Product) :Product {
+    return Product;
+}
+ const newProduct : Product = {
+    id : 111,
+    name : 'laptop',
+    price : 2000,
+    category : 'Electronic',
+ }
+
+ console.log(newProduct);
+
+ const newObject = Createproduct (newProduct);
+
+ console.log(newObject);
+
+
+
+class Employee  {
+    name : string;
+    salary : number;
+    
+    constructor(name : string,salary : number) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    getDetails () :string {
+        return `${this.name} ${this.salary}`
+    }
+}
+
+class Developer extends Employee {
+    pLanguage : string;
+
+    constructor(name : string , salary : number , pLanguage : string) {
+        super(name,salary)
+        this.pLanguage =pLanguage
+    }
+
+    getDetails(): string {
+        return `Developer : ${this.name} ${this.salary} ${this.pLanguage}`
+    }
+
+}
+
+class Designer extends Employee {
+
+    toolUsed : string;
+
+    constructor (name :string , salary : number , toolUsed : string ) {
+        super(name , salary)
+        this.toolUsed = toolUsed;
+    }
+    getDetails(): string {
+        return `Designer ${this.name} ${this.salary} ${this.toolUsed}`
+    }
+}
+
+const employee1 = new Developer ('Maaz' , 10000 ,'Java script')
+const employee2 = new Designer ('Ali' , 10000 ,'Adobe')
+
+console.log(employee1.getDetails())
+console.log(employee2.getDetails())

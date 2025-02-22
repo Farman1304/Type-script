@@ -71,4 +71,47 @@ myAccount.deposit(500);
 console.log("Current Balance", myAccount.getBalance());
 myAccount.withdraw(200);
 console.log("Net Total", myAccount.getBalance());
+function Createproduct(Product) {
+    return Product;
+}
+const newProduct = {
+    id: 111,
+    name: 'laptop',
+    price: 2000,
+    category: 'Electronic',
+};
+console.log(newProduct);
+const newObject = Createproduct(newProduct);
+console.log(newObject);
+class Employee {
+    constructor(name, salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+    getDetails() {
+        return `${this.name} ${this.salary}`;
+    }
+}
+class Developer extends Employee {
+    constructor(name, salary, pLanguage) {
+        super(name, salary);
+        this.pLanguage = pLanguage;
+    }
+    getDetails() {
+        return `Developer : ${this.name} ${this.salary} ${this.pLanguage}`;
+    }
+}
+class Designer extends Employee {
+    constructor(name, salary, toolUsed) {
+        super(name, salary);
+        this.toolUsed = toolUsed;
+    }
+    getDetails() {
+        return `Designer ${this.name} ${this.salary} ${this.toolUsed}`;
+    }
+}
+const employee1 = new Developer('Maaz', 10000, 'Java script');
+const employee2 = new Designer('Ali', 10000, 'Adobe');
+console.log(employee1.getDetails());
+console.log(employee2.getDetails());
 //# sourceMappingURL=app.js.map
